@@ -6,6 +6,7 @@ public class PlayerManager : MonoBehaviour {
 	public float speedX;
 	public float jumpSpeedY;
 
+	bool jump;
 	bool facingRight;
 	float speed;
 
@@ -45,8 +46,8 @@ public class PlayerManager : MonoBehaviour {
 		}
 
 		//Move up
-		if (Input.GetKeyDown (KeyCode.UpArrow)) {
-			anim.SetBool("Jump",true);
+		if (Input.GetKeyDown(KeyCode.UpArrow)) {
+			jump = true;
 			rb.AddForce (new Vector2 (rb.velocity.x,jumpSpeedY));
 			anim.SetInteger ("State", 2);
 		}
@@ -62,10 +63,10 @@ public class PlayerManager : MonoBehaviour {
 	}
 
 	void MovePlayer(float playerSpeed) {
-		if (playerSpeed < 0 && anim.GetBool ("Jump") == false || playerSpeed > 0 &&  anim.GetBool ("Jump") == false) {
+		if (playerSpeed < 0 && jump == false || playerSpeed > 0 &&  jump == false) {
 			anim.SetInteger ("State", 1);
 		}
-		if (playerSpeed == 0 && anim.GetBool ("Jump") == false) {
+		if (playerSpeed == 0 && jump == false) {
 			anim.SetInteger ("State", 0);
 		}
 		rb.velocity = new Vector3 (speed, rb.velocity.y, 0);
@@ -73,8 +74,12 @@ public class PlayerManager : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other) {
 		if (other.gameObject.tag == "Ground") {
-			anim.SetBool("Jump",false);
+			jump = false;
 			anim.SetInteger ("State", 0);
 		}
+	}
+
+	public void walkLeft() {
+		speed = -speedX;
 	}
 }
