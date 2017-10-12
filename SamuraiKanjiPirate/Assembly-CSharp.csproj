@@ -55,9 +55,11 @@
      <Compile Include="Assets\Scripts\MenuCRL.cs" />
      <Compile Include="Assets\Scripts\Ninja_jump.cs" />
      <Compile Include="Assets\Scripts\Ninja_move.cs" />
+     <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerManager.cs" />
+     <Compile Include="Assets\Scripts\Score.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
-     <None Include="Assets\yozakura\Yozakura font with lowercase is here.txt" />
+     <None Include="Assets\Fonts\yozakura\Yozakura font with lowercase is here.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
