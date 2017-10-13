@@ -51,12 +51,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AttackBehavior.cs" />
+     <Compile Include="Assets\Scripts\JumpAttackBehavior.cs" />
      <Compile Include="Assets\Scripts\Kanji.cs" />
      <Compile Include="Assets\Scripts\MenuCRL.cs" />
-     <Compile Include="Assets\Scripts\Ninja_jump.cs" />
-     <Compile Include="Assets\Scripts\Ninja_move.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
-     <Compile Include="Assets\Scripts\PlayerManager.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
      <None Include="Assets\Fonts\yozakura\Yozakura font with lowercase is here.txt" />

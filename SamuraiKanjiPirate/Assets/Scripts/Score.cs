@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Score : MonoBehaviour
 {
-	//public int score = 0;					// The player's score.
+	public int score = 0;					// The player's score.
 
 
 	//private PlayerControl playerControl;	// Reference to the player control script.
@@ -16,11 +16,14 @@ public class Score : MonoBehaviour
 	//	playerControl = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>();
 	//}
 
+	public void increaseScore() {
+		score++;
+	}
 
-	//void Update ()
-	//{
+	void Update ()
+	{
 		// Set the score text.
-		//GetComponent<GUIText>().text = "Score: " + score;
+		GetComponent<GUIText>().text = "Score: " + score;
 
 		// If the score has changed...
 		//if(previousScore != score)
@@ -29,6 +32,6 @@ public class Score : MonoBehaviour
 
 		// Set the previous score to this frame's score.
 		//previousScore = score;
-	//}
+	}
 
 }

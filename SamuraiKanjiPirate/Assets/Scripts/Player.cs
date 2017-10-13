@@ -20,13 +20,17 @@ public class Player : MonoBehaviour {
 	private Animator myAnimator;
 	public bool isGrounded;
 	private bool jump;
-
+	private bool JumpAttack;
 	[SerializeField]
 	private bool airControl;
 
 	[SerializeField]
+	private EdgeCollider2D SwordCollider;
+
+	[SerializeField]
 	private float jumpForce;
 	void Start () {  
+		
 		facingRight = true;
 		myRigidBody = GetComponent<Rigidbody2D> ();
 		myAnimator = GetComponent<Animator> ();
@@ -43,11 +47,15 @@ public class Player : MonoBehaviour {
 		HandleMovement(horizontal);
 		flip (horizontal);
 		HandleAttacks ();
+		HandleLayers ();
 		ResetValues ();
 	}
 
 	private void HandleMovement(float horizontal) 
 	{
+		if (myRigidBody.velocity.y < 0) {
+			myAnimator.SetBool("land",true);
+		}
 		if (!this.myAnimator.GetCurrentAnimatorStateInfo (0).IsTag ("Attack") && isGrounded) {
 			myRigidBody.velocity = new Vector2(horizontal*movementSpeed,myRigidBody.velocity.y);
 		}
@@ -55,15 +63,25 @@ public class Player : MonoBehaviour {
 		if (isGrounded && jump) {
 			isGrounded = false;
 			myRigidBody.AddForce(new Vector2(0,jumpForce));
+			myAnimator.SetTrigger ("jump");
 		}
 		myAnimator.SetFloat("speed", Mathf.Abs(horizontal));
 	}
 
 	private void HandleAttacks() 
 	{
-		if (isAttacking && !this.myAnimator.GetCurrentAnimatorStateInfo (0).IsTag ("Attack")) {
+		if (isAttacking && isGrounded &&!this.myAnimator.GetCurrentAnimatorStateInfo (0).IsTag ("Attack")) {
 			myAnimator.SetTrigger ("attack");
 			myRigidBody.velocity = Vector2.zero;
+		}
+		if (JumpAttack && !isGrounded && !this.myAnimator.GetCurrentAnimatorStateInfo(1).IsName("JumpAttack")) {
+			myAnimator.SetBool ("jumpAttack", true);
+		}
+		if (!JumpAttack && !this.myAnimator.GetCurrentAnimatorStateInfo (1).IsName ("JumpAttack")) {
+			myAnimator.SetBool ("jumpAttack",false);
+		}
+		if (isAttacking && isGrounded && SwordCollider.enabled) {
+			SwordCollider.enabled = !SwordCollider.enabled;
 		}
 	}
 
@@ -73,6 +91,7 @@ public class Player : MonoBehaviour {
 		}
 		if (Input.GetKeyDown (KeyCode.LeftShift)) {
 			isAttacking = true;
+			JumpAttack = true;
 		}
 	}
 
@@ -89,6 +108,7 @@ public class Player : MonoBehaviour {
 	private void ResetValues() {
 		isAttacking = false;
 		jump = false;
+		JumpAttack = false;
 	}
 
 	private bool IsGrounded() {
@@ -98,11 +118,32 @@ public class Player : MonoBehaviour {
 
 				for (int i = 0; i < colliders.Length; i++) {
 					if (colliders[i].gameObject != gameObject) {
+						myAnimator.ResetTrigger ("jump");
+						myAnimator.SetBool("land",false);
 						return true;
 					}
 				}
 			}
 		}
 		return false;
+	}
+
+	private void HandleLayers() {
+		if (!isGrounded) {
+			myAnimator.SetLayerWeight (1, 1);
+		} else {
+			myAnimator.SetLayerWeight (1, 0);
+		}
+	}
+
+	public void Attack() 
+	{
+		Debug.Log(SwordCollider.enabled = !SwordCollider.enabled);
+	}
+
+	public void AirAttack() {
+		if (SwordCollider.enabled) {
+			SwordCollider.enabled = !SwordCollider.enabled;
+		}
 	}
 }

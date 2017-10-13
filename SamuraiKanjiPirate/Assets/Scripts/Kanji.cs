@@ -3,10 +3,27 @@ using System.Collections;
 
 public class Kanji : MonoBehaviour
 {
-	public float moveSpeed = 5f;	
+
+	public bool isSelected;
+	public Transform tra;
 
 	void FixedUpdate ()
 	{
-		GetComponent<Rigidbody2D>().AddForce(Vector3.down * moveSpeed);
+		offScreen ();
+	}
+
+	private void offScreen() 
+	{
+		tra = GetComponent<Transform> ();
+		if(tra.position.y < -10) 
+		{
+			Destroy (gameObject);
+		}
+	}
+
+	void OnTriggerEnter2D (Collider2D col) 
+	{
+		GameObject.FindGameObjectWithTag ("score").GetComponent<Score> ().increaseScore();
+		Destroy (gameObject);
 	}
 }
