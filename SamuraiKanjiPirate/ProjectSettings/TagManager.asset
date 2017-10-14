@@ -8,6 +8,10 @@ TagManager:
   - sword
   - score
   - choice
+  - life1
+  - life2
+  - life3
+  - kanji
   layers:
   - Default
   - TransparentFX

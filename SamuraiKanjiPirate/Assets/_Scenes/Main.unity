@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 371392271}
   m_Layer: 9
   m_Name: Ground Tile
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -421,13 +421,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 584458a74c10b9a47961177855bb2667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 150
-  groundCheck: {fileID: 0}
-  groundRadius: 0.2
-  grounded: 0
-  whatIsGround:
-    m_Bits: 0
-  anim: {fileID: 0}
 --- !u!1 &572617368
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,6 +485,122 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 18.339512, y: 2.5907288}
   m_EdgeRadius: 0
+--- !u!1 &587780995
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 587781000}
+  - component: {fileID: 587780999}
+  - component: {fileID: 587780998}
+  - component: {fileID: 587780997}
+  - component: {fileID: 587780996}
+  m_Layer: 0
+  m_Name: leftBoundary
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!50 &587780996
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 587780995}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!61 &587780997
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 587780995}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.15958032, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3191605, y: 1}
+  m_EdgeRadius: 0
+--- !u!23 &587780998
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 587780995}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &587780999
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 587780995}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &587781000
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 587780995}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.62, y: 0, z: 0}
+  m_LocalScale: {x: 0.07546774, y: 10, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &657983961
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,9 +770,10 @@ GameObject:
   m_Component:
   - component: {fileID: 862110036}
   - component: {fileID: 862110037}
+  - component: {fileID: 862110038}
   m_Layer: 0
   m_Name: life
-  m_TagString: Untagged
+  m_TagString: life3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -723,6 +833,17 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &862110038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 862110035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0cbd35622630a548849cb638d760c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &869704241
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,7 +855,7 @@ GameObject:
   - component: {fileID: 869704243}
   m_Layer: 9
   m_Name: Ground Tile
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1124,7 +1245,7 @@ GameObject:
   - component: {fileID: 1176009913}
   m_Layer: 9
   m_Name: Ground Tile
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1290,8 +1411,22 @@ MonoBehaviour:
   spawnTime2: 1
   spawnDelay2: 2
   kanjis:
-  - {fileID: 1592839831396832, guid: 138766af67d2e5f49ae5ffb39d274f7f, type: 2}
-  - {fileID: 1064305034455054, guid: 4b09e241b11b0f648b0517decb4f8875, type: 2}
+  - {fileID: 1135494785975128, guid: 427559b7c246644488447070e43d1196, type: 2}
+  - {fileID: 1818033207583566, guid: 85138355e02274142b4560ceabe5a5e0, type: 2}
+  - {fileID: 1233072694989560, guid: abeb34ba6e8a20b418356d1d5706d451, type: 2}
+  - {fileID: 1000140422596300, guid: 3a69b832c31247247b195acb80b126da, type: 2}
+  - {fileID: 1083109902996798, guid: 941b231f56db5ca4693fb0aada933145, type: 2}
+  - {fileID: 1752177705802712, guid: 3bc6ee4296f4b7d4c80778b213fb42db, type: 2}
+  - {fileID: 1500576623219344, guid: 9265de392cc413e4782b014a518df66f, type: 2}
+  - {fileID: 1859352020202380, guid: 0212ab0c7a7167743bddaac7e2da91fd, type: 2}
+  - {fileID: 1880030671352334, guid: 51fd8c8a2b5b9de41851d558a317fa03, type: 2}
+  - {fileID: 1953914062311842, guid: 756decb3570631d46a08cfc7e34451e1, type: 2}
+  - {fileID: 1069284616489542, guid: 06a77e62d1e25a74d805c74098e41634, type: 2}
+  - {fileID: 1661681232630808, guid: 0f2645656e4bff54f8e25820ca31f05f, type: 2}
+  - {fileID: 1814461232410526, guid: 1e298ac519903b744bbd1a4cf7b68967, type: 2}
+  - {fileID: 1550664874081504, guid: 2a12ab313ae842b45add485422774d3e, type: 2}
+  - {fileID: 1933105918613956, guid: 174388298c9cab74abea72fbfeacb94f, type: 2}
+  target: {fileID: 0}
 --- !u!1 &1316570011
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,7 +1548,7 @@ GameObject:
   - component: {fileID: 1317105449}
   m_Layer: 9
   m_Name: Ground Tile
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1482,9 +1617,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1356774980}
   - component: {fileID: 1356774981}
+  - component: {fileID: 1356774982}
   m_Layer: 0
   m_Name: life
-  m_TagString: Untagged
+  m_TagString: life1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1544,6 +1680,17 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1356774982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1356774979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0cbd35622630a548849cb638d760c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1399296924
 GameObject:
   m_ObjectHideFlags: 0
@@ -1553,9 +1700,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1399296925}
   - component: {fileID: 1399296926}
+  - component: {fileID: 1399296927}
   m_Layer: 0
   m_Name: life
-  m_TagString: Untagged
+  m_TagString: life2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1615,6 +1763,17 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1399296927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1399296924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0cbd35622630a548849cb638d760c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1558490589
 GameObject:
   m_ObjectHideFlags: 0
@@ -1643,6 +1802,122 @@ Transform:
   m_Father: {fileID: 544388469}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1599479115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1599479120}
+  - component: {fileID: 1599479119}
+  - component: {fileID: 1599479118}
+  - component: {fileID: 1599479117}
+  - component: {fileID: 1599479116}
+  m_Layer: 0
+  m_Name: rightBoundary
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!50 &1599479116
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1599479115}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!61 &1599479117
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1599479115}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.99999994, y: 1}
+  m_EdgeRadius: 0
+--- !u!23 &1599479118
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1599479115}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1599479119
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1599479115}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1599479120
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1599479115}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.68, y: 0, z: 0}
+  m_LocalScale: {x: 0.07546774, y: 10, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1729979630
 GameObject:
   m_ObjectHideFlags: 0
@@ -1654,7 +1929,7 @@ GameObject:
   - component: {fileID: 1729979632}
   m_Layer: 9
   m_Name: Ground Tile
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1725,7 +2000,7 @@ GameObject:
   - component: {fileID: 1749120338}
   m_Layer: 9
   m_Name: Ground Tile
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1963,9 +2238,10 @@ GameObject:
   - component: {fileID: 1905941456}
   - component: {fileID: 1905941458}
   - component: {fileID: 1905941457}
+  - component: {fileID: 1905941459}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: kanji
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1985,7 +2261,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -409.00082, y: 274.00085}
+  m_AnchoredPosition: {x: -403, y: 279}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1905941457
@@ -2027,6 +2303,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1905941455}
+--- !u!114 &1905941459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1905941455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44fce6ddfe0b78a438551554722bf2da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1986724748
 GameObject:
   m_ObjectHideFlags: 0
@@ -2038,7 +2325,7 @@ GameObject:
   - component: {fileID: 1986724750}
   m_Layer: 9
   m_Name: Ground Tile
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2169,7 +2456,7 @@ GameObject:
   - component: {fileID: 2061316655}
   m_Layer: 9
   m_Name: Ground Tile
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2240,7 +2527,7 @@ GameObject:
   - component: {fileID: 2064015577}
   m_Layer: 9
   m_Name: Ground Tile
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2311,7 +2598,7 @@ GameObject:
   - component: {fileID: 2065595462}
   m_Layer: 9
   m_Name: Ground Tile
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

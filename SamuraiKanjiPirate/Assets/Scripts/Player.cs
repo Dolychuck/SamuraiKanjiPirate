@@ -70,6 +70,10 @@ public class Player : MonoBehaviour {
 
 	private void HandleAttacks() 
 	{
+		if (isAttacking && isGrounded) 
+		{
+			SwordCollider.enabled = false;
+		}
 		if (isAttacking && isGrounded &&!this.myAnimator.GetCurrentAnimatorStateInfo (0).IsTag ("Attack")) {
 			myAnimator.SetTrigger ("attack");
 			myRigidBody.velocity = Vector2.zero;
@@ -79,9 +83,6 @@ public class Player : MonoBehaviour {
 		}
 		if (!JumpAttack && !this.myAnimator.GetCurrentAnimatorStateInfo (1).IsName ("JumpAttack")) {
 			myAnimator.SetBool ("jumpAttack",false);
-		}
-		if (isAttacking && isGrounded && SwordCollider.enabled) {
-			SwordCollider.enabled = !SwordCollider.enabled;
 		}
 	}
 
@@ -140,10 +141,13 @@ public class Player : MonoBehaviour {
 	{
 		Debug.Log(SwordCollider.enabled = !SwordCollider.enabled);
 	}
+	public void AttackOn() {
+		if (!SwordCollider.enabled)
+			SwordCollider.enabled = true;
+	}
 
-	public void AirAttack() {
-		if (SwordCollider.enabled) {
-			SwordCollider.enabled = !SwordCollider.enabled;
-		}
+	public void AttackOff() {
+		if (SwordCollider.enabled)
+			SwordCollider.enabled = false;
 	}
 }
