@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 61606516289601860}
   m_Layer: 0
   m_Name: seven
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,6 +104,11 @@ MonoBehaviour:
   explosion: {fileID: 1076982235598740, guid: 913e294b753168042a93fcf3b2979b9e, type: 2}
   meaning: Seven
   collider: {fileID: 61606516289601860}
+  edgeCollider: {fileID: 0}
+  body: {fileID: 0}
+  isDestroyed: 0
+  isGrounded: 0
+  playCount: 0
 --- !u!212 &212803795658068148
 SpriteRenderer:
   m_ObjectHideFlags: 1

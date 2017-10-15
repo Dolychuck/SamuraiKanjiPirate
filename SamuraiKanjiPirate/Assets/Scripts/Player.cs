@@ -141,6 +141,7 @@ public class Player : MonoBehaviour {
 	{
 		Debug.Log(SwordCollider.enabled = !SwordCollider.enabled);
 	}
+
 	public void AttackOn() {
 		if (!SwordCollider.enabled)
 			SwordCollider.enabled = true;

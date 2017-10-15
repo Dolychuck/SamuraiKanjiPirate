@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\Score.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
      <Compile Include="Assets\Scripts\TextUpdate.cs" />
+     <Compile Include="Assets\Scripts\WinScreen.cs" />
      <None Include="Assets\Fonts\yozakura\Yozakura font with lowercase is here.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

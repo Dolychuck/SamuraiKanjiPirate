@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 61131568767687498}
   m_Layer: 0
   m_Name: four
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,6 +104,11 @@ MonoBehaviour:
   explosion: {fileID: 1076982235598740, guid: 913e294b753168042a93fcf3b2979b9e, type: 2}
   meaning: Four
   collider: {fileID: 61131568767687498}
+  edgeCollider: {fileID: 0}
+  body: {fileID: 0}
+  isDestroyed: 0
+  isGrounded: 0
+  playCount: 0
 --- !u!212 &212099222327940190
 SpriteRenderer:
   m_ObjectHideFlags: 1

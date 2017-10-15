@@ -12,6 +12,9 @@ TagManager:
   - life2
   - life3
   - kanji
+  - enemy
+  - ninja
+  - ninjaHead
   layers:
   - Default
   - TransparentFX

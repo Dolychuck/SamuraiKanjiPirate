@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.SceneManagement;
 public class Score : MonoBehaviour
 {
 	public int score = 0;					// The player's score.
@@ -18,6 +18,9 @@ public class Score : MonoBehaviour
 
 	public void increaseScore() {
 		score++;
+		if(score == 2) {
+			SceneManager.LoadScene ("Win");
+		}
 	}
 
 	void Update ()

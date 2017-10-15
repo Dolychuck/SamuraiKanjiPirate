@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 61981223732152138}
   m_Layer: 0
   m_Name: six
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,7 +103,12 @@ MonoBehaviour:
   trans: {fileID: 0}
   explosion: {fileID: 1076982235598740, guid: 913e294b753168042a93fcf3b2979b9e, type: 2}
   meaning: Six
-  collider: {fileID: 0}
+  collider: {fileID: 61981223732152138}
+  edgeCollider: {fileID: 0}
+  body: {fileID: 0}
+  isDestroyed: 0
+  isGrounded: 0
+  playCount: 0
 --- !u!212 &212326038051958290
 SpriteRenderer:
   m_ObjectHideFlags: 1
