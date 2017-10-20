@@ -12,6 +12,7 @@ public class Spawner : MonoBehaviour
 	public static ArrayList targetted = new ArrayList ();
 	public Kanji[] kanjis;		
 	public Kanji target;
+	public bool isHard;
 
 	void Start ()
 	{
@@ -43,6 +44,11 @@ public class Spawner : MonoBehaviour
 				k.DisableCollider ();
 			} else {
 				k.EnableCollider ();
+			}
+			if (isHard) {
+				k.setIsHard (true);
+			} else {
+				k.setIsHard (false);
 			}
 		}
 	}

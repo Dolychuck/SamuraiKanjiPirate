@@ -1077,8 +1077,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "-www.gameart2d.com         \n\t(Ninja & background assets)\n\n-StumpyStrust
-    & opengameorg.com  \n\t(Heart assets)\n\n-inScope Studios\n\t(youtube Unity tutorials)"
+  m_Text: "-www.gameart2d.com         \n\t(Ninja & background assets)\n-GameArtForge
+    & opengameart.org  \n\t(Heart assets)\n-StumpyStrust & opengameart.org \n\t(explosion
+    animation) \n-inScope Studios\n\t(youtube Unity tutorials)"
 --- !u!222 &1906222210
 CanvasRenderer:
   m_ObjectHideFlags: 0

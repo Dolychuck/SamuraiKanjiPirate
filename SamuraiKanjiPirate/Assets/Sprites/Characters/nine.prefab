@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50853146817080946}
   - component: {fileID: 114056933546610510}
   - component: {fileID: 61193620570014822}
+  - component: {fileID: 68189982371417856}
   m_Layer: 0
   m_Name: nine
   m_TagString: enemy
@@ -88,6 +89,45 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.98, y: 0.87}
   m_EdgeRadius: 0
+--- !u!68 &68189982371417856
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1880030671352334}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.41665268, y: -0.06450489}
+  - {x: 0.40829057, y: -0.15900794}
+  - {x: 0.33548898, y: -0.27948886}
+  - {x: 0.2244016, y: -0.3783892}
+  - {x: 0.12638044, y: -0.40853122}
+  - {x: -0.035883546, y: -0.42609754}
+  - {x: -0.12495208, y: -0.42973217}
+  - {x: -0.19753957, y: -0.40049794}
+  - {x: -0.28822994, y: -0.3601432}
+  - {x: -0.39436483, y: -0.25847352}
+  - {x: -0.44264066, y: -0.19126424}
+  - {x: -0.46580172, y: -0.11667639}
+  - {x: -0.48298407, y: -0.0664998}
+  - {x: -0.48493624, y: 0.06458095}
+  - {x: -0.43564928, y: 0.1856164}
+  - {x: -0.40422857, y: 0.2525187}
+  - {x: -0.34841406, y: 0.2958958}
+  - {x: -0.28395033, y: 0.34486115}
+  - {x: -0.2060926, y: 0.3843346}
+  - {x: -0.021891356, y: 0.42644927}
+  - {x: 0.20733547, y: 0.37948784}
+  - {x: 0.32668096, y: 0.25805387}
+  - {x: 0.42654598, y: 0.11840047}
+  - {x: 0.42191148, y: -0.06450492}
 --- !u!114 &114056933546610510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -109,6 +149,7 @@ MonoBehaviour:
   isDestroyed: 0
   isGrounded: 0
   playCount: 0
+  isHard: 0
 --- !u!212 &212174664755767490
 SpriteRenderer:
   m_ObjectHideFlags: 1

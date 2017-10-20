@@ -15,6 +15,7 @@ TagManager:
   - enemy
   - ninja
   - ninjaHead
+  - kanjiCollider
   layers:
   - Default
   - TransparentFX

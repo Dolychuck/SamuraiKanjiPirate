@@ -18,7 +18,7 @@ public class Score : MonoBehaviour
 
 	public void increaseScore() {
 		score++;
-		if(score == 5) {
+		if(score == 10) {
 			SceneManager.LoadScene ("Win");
 		}
 	}

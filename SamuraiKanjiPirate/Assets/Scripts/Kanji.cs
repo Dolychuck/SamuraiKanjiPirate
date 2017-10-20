@@ -14,9 +14,13 @@ public class Kanji : MonoBehaviour
 	public bool isDestroyed;
 	public bool isGrounded;
 	public int playCount;
+	public bool isHard;
 
 	void start() {
 		playCount = 0;
+	}
+	public void setIsHard(bool dif) {
+		isHard = dif;
 	}
 
 	public void incrementPlayCount() {
@@ -59,6 +63,11 @@ public class Kanji : MonoBehaviour
 		return meaning;
 	}
 
+	/*IEnumerator Death() {
+		yield return new WaitForSeconds (1);
+		SceneManager.LoadScene ("GameOver");
+	} */
+
 	void takeLife() 
 	{
 		if (GameObject.FindGameObjectWithTag ("life1") != null) {
@@ -82,13 +91,20 @@ public class Kanji : MonoBehaviour
 				incrementPlayCount ();
 				Destroy (gameObject);
 			}
-			/*
-			if (col.tag == "ninjaHead") {
+
+			if (isHard == true) {
+				if (col.name == "Ninja") {
+					Instantiate (explosion, trans.position, transform.rotation = Quaternion.identity);
+					Destroy (gameObject);
+					takeLife ();
+				}
+			}
+
+			if (col.name == "ninjaHead") {
 				Instantiate (explosion, trans.position, transform.rotation = Quaternion.identity);
 				Destroy (gameObject);
 				takeLife ();
 			}
-			*/
 		}
 	}
 
