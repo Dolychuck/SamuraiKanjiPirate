@@ -1,13 +1,10 @@
-# samuraiKanjiPirate
+# samuraiKanjiNinja
 
-```<html>
-<body>
 
-<video width="640" height="480" controls>
-  <source src="Demo.webm" type="video/WebM">
-  Your browser does not support the video tag.
-</video>
+Current controls:
+	left arrow   = move left
+	right arrow  = move right
+	space        = Jump
+	attack		 = shift
 
-</body>
-</html>
-```
+**Buttons will be added later for mobile use**
