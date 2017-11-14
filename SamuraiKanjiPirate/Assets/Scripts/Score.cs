@@ -19,6 +19,13 @@ public class Score : MonoBehaviour
 	public void increaseScore() {
 		score++;
 		if(score == 10) {
+			Player Ninja = GameObject.FindGameObjectWithTag ("Ninja").GetComponent<Player>();
+			FileWriter.WriteData ("Result: Loss\nTotal time: " + Spawner.sw.ElapsedMilliseconds/1000  +
+				"\nTotal Kanji: " + Spawner.totalKanji, "Round.txt", "");
+			FileWriter.WriteData ("Jump Count: " + Ninja.getJumpCount() +"\nAttack Count: "
+				+ Ninja.getAttackCount() + "\nJump_attack count: " 
+				+ Ninja.getJumpAttackCount()+"\nDirection change count: " 
+				+ Ninja.getDirectionChangeCount()+"\n", "Movement.txt", "");
 			SceneManager.LoadScene ("Win");
 		}
 	}

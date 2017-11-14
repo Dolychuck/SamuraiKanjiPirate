@@ -150,6 +150,7 @@ MonoBehaviour:
   isGrounded: 0
   playCount: 0
   isHard: 0
+  Ninja: {fileID: 0}
 --- !u!212 &212180382444760632
 SpriteRenderer:
   m_ObjectHideFlags: 1

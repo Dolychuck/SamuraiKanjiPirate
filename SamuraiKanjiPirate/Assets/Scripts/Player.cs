@@ -18,6 +18,10 @@ public class Player : MonoBehaviour {
 	private bool facingRight;
 	private bool isAttacking;
 	private Animator myAnimator;
+	public int attackCount;
+	public int jumpCount;
+	public int jumpAttackCount;
+	public int directionChangeCount;
 	public bool isGrounded;
 	private bool jump;
 	private bool JumpAttack;
@@ -30,15 +34,42 @@ public class Player : MonoBehaviour {
 	[SerializeField]
 	private float jumpForce;
 	void Start () {  
-		
 		facingRight = true;
 		myRigidBody = GetComponent<Rigidbody2D> ();
 		myAnimator = GetComponent<Animator> ();
+		jumpCount = 0;
+		attackCount = 0;
+		jumpAttackCount = 0;
 	}
 
 	void Update() {
 		HandleInput ();
 	}
+
+	public string getGrounded() {
+		if (isGrounded) {
+			return "Player Grounded";
+		} else {
+			return "Player not Grounded";
+		}
+	}
+
+	public int getJumpCount() {
+		return jumpCount;
+	}
+
+	public int getAttackCount() {
+		return attackCount;
+	}
+
+	public int getDirectionChangeCount() {
+		return directionChangeCount;
+	}
+
+	public int getJumpAttackCount() {
+		return jumpAttackCount;
+	}
+
 
 	void FixedUpdate () 
 	{
@@ -64,6 +95,7 @@ public class Player : MonoBehaviour {
 			isGrounded = false;
 			myRigidBody.AddForce(new Vector2(0,jumpForce));
 			myAnimator.SetTrigger ("jump");
+			jumpCount++;
 		}
 		myAnimator.SetFloat("speed", Mathf.Abs(horizontal));
 	}
@@ -76,10 +108,12 @@ public class Player : MonoBehaviour {
 		}
 		if (isAttacking && isGrounded &&!this.myAnimator.GetCurrentAnimatorStateInfo (0).IsTag ("Attack")) {
 			myAnimator.SetTrigger ("attack");
+			attackCount++;
 			myRigidBody.velocity = Vector2.zero;
 		}
 		if (JumpAttack && !isGrounded && !this.myAnimator.GetCurrentAnimatorStateInfo(1).IsName("JumpAttack")) {
 			myAnimator.SetBool ("jumpAttack", true);
+			jumpAttackCount++;
 		}
 		if (!JumpAttack && !this.myAnimator.GetCurrentAnimatorStateInfo (1).IsName ("JumpAttack")) {
 			myAnimator.SetBool ("jumpAttack",false);
@@ -103,6 +137,7 @@ public class Player : MonoBehaviour {
 			Vector3 scale = transform.localScale;
 			scale.x *= -1;
 			transform.localScale = scale;
+			directionChangeCount++;
 		}
 	}
 
@@ -112,7 +147,7 @@ public class Player : MonoBehaviour {
 		JumpAttack = false;
 	}
 
-	private bool IsGrounded() {
+	public bool IsGrounded() {
 		if (myRigidBody.velocity.y <= 0) {
 			foreach (Transform point in groundPoints) {
 				Collider2D[] colliders = Physics2D.OverlapCircleAll (point.position, groundRadius, whatIsGround);

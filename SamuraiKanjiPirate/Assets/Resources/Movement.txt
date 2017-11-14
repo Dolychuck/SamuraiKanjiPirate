@@ -1,0 +1,260 @@
+************New Round (easy)**************
+
+Jump Count: 3
+Attack Count: 5
+Jump_attack count: 2
+Direction change count: 9
+
+************New Round (easy)**************
+
+Jump Count: 4
+Attack Count: 11
+Jump_attack count: 3
+Direction change count: 15
+
+************New Round (easy)**************
+
+Jump Count: 10
+Attack Count: 5
+Jump_attack count: 2
+Direction change count: 25
+
+************New Round (easy)**************
+
+Jump Count: 8
+Attack Count: 7
+Jump_attack count: 4
+Direction change count: 18
+
+************New Round (easy)**************
+
+Jump Count: 3
+Attack Count: 3
+Jump_attack count: 3
+Direction change count: 9
+
+************New Round (easy)**************
+
+Jump Count: 6
+Attack Count: 4
+Jump_attack count: 4
+Direction change count: 25
+
+************New Round (easy)**************
+
+Jump Count: 13
+Attack Count: 7
+Jump_attack count: 7
+Direction change count: 19
+
+************New Round (hard)**************
+
+Jump Count: 16
+Attack Count: 4
+Jump_attack count: 9
+Direction change count: 22
+
+************New Round (hard)**************
+
+Jump Count: 10
+Attack Count: 1
+Jump_attack count: 7
+Direction change count: 19
+
+************New Round (easy)**************
+
+************New Round (easy)**************
+
+Jump Count: 5
+Attack Count: 5
+Jump_attack count: 3
+Direction change count: 8
+
+************New Round (easy)**************
+
+Jump Count: 21
+Attack Count: 5
+Jump_attack count: 7
+Direction change count: 12
+
+************New Round (hard)**************
+
+Jump Count: 8
+Attack Count: 7
+Jump_attack count: 1
+Direction change count: 9
+
+************New Round (easy)**************
+
+Jump Count: 7
+Attack Count: 4
+Jump_attack count: 5
+Direction change count: 7
+
+************New Round (easy)**************
+
+Jump Count: 8
+Attack Count: 7
+Jump_attack count: 3
+Direction change count: 9
+
+************New Round (easy)**************
+
+************New Round (easy)**************
+
+Jump Count: 0
+Attack Count: 0
+Jump_attack count: 0
+Direction change count: 0
+
+************New Round (easy)**************
+
+Jump Count: 6
+Attack Count: 6
+Jump_attack count: 3
+Direction change count: 9
+
+************New Round (easy)**************
+
+Jump Count: 10
+Attack Count: 19
+Jump_attack count: 8
+Direction change count: 29
+
+************New Round (easy)**************
+
+Jump Count: 3
+Attack Count: 4
+Jump_attack count: 3
+Direction change count: 4
+
+************New Round (easy)**************
+
+Jump Count: 0
+Attack Count: 6
+Jump_attack count: 1
+Direction change count: 21
+
+************New Round (easy)**************
+
+Jump Count: 9
+Attack Count: 10
+Jump_attack count: 3
+Direction change count: 34
+
+************New Round (easy)**************
+
+************New Round (easy)**************
+
+************New Round (hard)**************
+
+Jump Count: 3
+Attack Count: 2
+Jump_attack count: 2
+Direction change count: 17
+
+************New Round (easy)**************
+
+Jump Count: 10
+Attack Count: 4
+Jump_attack count: 9
+Direction change count: 32
+
+************New Round (easy)**************
+
+Jump Count: 9
+Attack Count: 2
+Jump_attack count: 7
+Direction change count: 41
+
+************New Round (hard)**************
+
+Jump Count: 4
+Attack Count: 0
+Jump_attack count: 3
+Direction change count: 20
+
+************New Round (easy)**************
+
+Jump Count: 12
+Attack Count: 1
+Jump_attack count: 7
+Direction change count: 19
+
+************New Round (easy)**************
+
+Jump Count: 18
+Attack Count: 3
+Jump_attack count: 13
+Direction change count: 88
+
+************New Round (easy)**************
+
+Jump Count: 1
+Attack Count: 9
+Jump_attack count: 1
+Direction change count: 12
+
+************New Round (easy)**************
+
+Jump Count: 5
+Attack Count: 4
+Jump_attack count: 2
+Direction change count: 11
+
+************New Round (easy)**************
+
+Jump Count: 6
+Attack Count: 5
+Jump_attack count: 4
+Direction change count: 11
+
+************New Round (easy)**************
+
+Jump Count: 1
+Attack Count: 5
+Jump_attack count: 1
+Direction change count: 19
+
+************New Round (easy)**************
+
+Jump Count: 4
+Attack Count: 13
+Jump_attack count: 2
+Direction change count: 15
+
+************New Round (hard)**************
+
+Jump Count: 2
+Attack Count: 6
+Jump_attack count: 0
+Direction change count: 6
+
+************New Round (hard)**************
+
+Jump Count: 1
+Attack Count: 2
+Jump_attack count: 0
+Direction change count: 4
+
+************New Round (easy)**************
+
+Jump Count: 3
+Attack Count: 3
+Jump_attack count: 0
+Direction change count: 9
+
+************New Round (easy)**************
+
+Jump Count: 3
+Attack Count: 13
+Jump_attack count: 1
+Direction change count: 32
+
+************New Round (easy)**************
+
+Jump Count: 4
+Attack Count: 3
+Jump_attack count: 0
+Direction change count: 11
+

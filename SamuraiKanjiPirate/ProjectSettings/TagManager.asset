@@ -16,6 +16,9 @@ TagManager:
   - ninja
   - ninjaHead
   - kanjiCollider
+  - Ninja
+  - life4
+  - life5
   layers:
   - Default
   - TransparentFX

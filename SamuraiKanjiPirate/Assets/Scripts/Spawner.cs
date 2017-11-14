@@ -2,28 +2,44 @@
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Collections;
 
 public class Spawner : MonoBehaviour
 {
+	public Player ninjaPlayer;
 	public float spawnTime1 = 2f;
 	public float spawnDelay1 = 4f;
-	public float spawnTime2 = 1f;
-	public float spawnDelay2 = 3f;
+	public float spawnTime2 = 0f;
+	public float spawnDelay2 = 1f;
 	public static ArrayList targetted = new ArrayList ();
 	public Kanji[] kanjis;		
 	public Kanji target;
 	public bool isHard;
+	public static System.Diagnostics.Stopwatch sw;
+	public static int totalKanji;
 
 	void Start ()
 	{
-		//resetPlayed ();
-		resetTargetted();
 		Choose ();
-		InvokeRepeating("SpawnChosen", 1f, 5f);
-		InvokeRepeating("Spawn", spawnDelay1, spawnTime1);
+		totalKanji = 0;
+		sw = new System.Diagnostics.Stopwatch ();
+		sw.Start ();
+		resetTargetted();
+		string difficulty;
+		if (isHard) {
+			difficulty = "hard";
+		} else {
+			difficulty = "easy";
+		}
+		FileWriter.WriteData ("************New Round ("+difficulty+")**************\n", "KanjiDeath.txt", "");
+		FileWriter.WriteData ("************New Round ("+difficulty+")**************\n", "KanjiKilled.txt", "");
+		FileWriter.WriteData ("************New Round ("+difficulty+")**************\n", "Movement.txt", "");
+		FileWriter.WriteData ("************New Round ("+difficulty+")**************\n", "Round.txt", "");
+		//InvokeRepeating("SpawnChosen", 1f, 5f);
+		//InvokeRepeating("Spawn", spawnDelay1, spawnTime1);
 		InvokeRepeating("Spawn", spawnDelay2, spawnTime2);
 	}
-
+		
 	void disableAllinArray() {
 		foreach(Kanji k in kanjis) {
 			k.DisableCollider ();
@@ -45,11 +61,6 @@ public class Spawner : MonoBehaviour
 			} else {
 				k.EnableCollider ();
 			}
-			if (isHard) {
-				k.setIsHard (true);
-			} else {
-				k.setIsHard (false);
-			}
 		}
 	}
 	public void resetPlayed() 
@@ -70,17 +81,22 @@ public class Spawner : MonoBehaviour
 		StartCoroutine(setAll ());
 	}
 
-	void SpawnChosen() {
-		Instantiate(target,new Vector3(Random.Range(-7,7),7,0),transform.rotation);
-	}
-
 	void resetTargetted() {
 		targetted.Clear ();
 	}
 
 	void Spawn ()
 	{
-		int kanjisIndex = Random.Range(0, kanjis.Length);
-		Instantiate(kanjis[kanjisIndex],new Vector3(Random.Range(-7,7),7,0),transform.rotation);
+		totalKanji++;
+		if (totalKanji % 3 == 0) {
+			Instantiate (target, new Vector3 (Random.Range (-7, 7), 7, 0), transform.rotation);
+		} else {
+			int kanjisIndex = Random.Range (0, kanjis.Length);
+			if (isHard) {
+				Instantiate (kanjis [kanjisIndex], new Vector3 (Random.Range (-7, 7), 7, 0), transform.rotation).setIsHard (true);
+			} else {
+				Instantiate (kanjis [kanjisIndex], new Vector3 (Random.Range (-7, 7), 7, 0), transform.rotation);
+			}
+		}
 	}
 }
