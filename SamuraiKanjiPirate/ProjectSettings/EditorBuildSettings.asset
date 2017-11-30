@@ -6,12 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/Menu.unity
-    guid: 0ea7a68cc2d4daa47acc983c6bd8f9b2
-  - enabled: 1
-    path: Assets/_Scenes/Credits.unity
-    guid: deb73757dc9047040807a240029cc547
-  - enabled: 1
     path: Assets/_Scenes/HowToPlayEasy.unity
     guid: 60f69c886a586ef47bdf3a4b798d9443
   - enabled: 1
@@ -29,3 +23,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/GameOver.unity
     guid: f5c8fcb4c4577114293650aee332f186
+  - enabled: 1
+    path: Assets/_Scenes/Tutorial.unity
+    guid: e5e0d2ba10d05634f9684bd2a83ae1e8
+  - enabled: 1
+    path: Assets/_Scenes/Video.unity
+    guid: 0ea7a68cc2d4daa47acc983c6bd8f9b2
+  - enabled: 1
+    path: Assets/_Scenes/Credits.unity
+    guid: deb73757dc9047040807a240029cc547
+  - enabled: 1
+    path: Assets/_Scenes/Menu.unity
+    guid: 5127f2fe3f22fc147b4a2b4834bba0af

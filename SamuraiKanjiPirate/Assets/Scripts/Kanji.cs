@@ -6,6 +6,7 @@ public class Kanji : MonoBehaviour
 	public bool isSelected;
 	public Transform trans;
 	public GameObject explosion;
+	public GameObject heart;
 	public string meaning;
 	public BoxCollider2D collider;
 	public EdgeCollider2D edgeCollider;
@@ -15,11 +16,11 @@ public class Kanji : MonoBehaviour
 	public int playCount;
 	public bool isHard;
 	public Player Ninja;
-
+	public bool isTutorial;
 	void start() {
 		playCount = 0;
 	}
-
+		
 	public void setIsHard(bool dif) {
 		isHard = dif;
 	}
@@ -68,10 +69,10 @@ public class Kanji : MonoBehaviour
 		return meaning;
 	}
 
-	/*IEnumerator Death() {
-		yield return new WaitForSeconds (1);
+	IEnumerator Death() {
+		yield return new WaitForSeconds (2);
 		SceneManager.LoadScene ("GameOver");
-	} */
+	} 
 
 	void takeLife(bool hitGround) 
 	{
@@ -103,6 +104,7 @@ public class Kanji : MonoBehaviour
 				+ Ninja.getJumpAttackCount()+"\nDirection change count: " 
 				+ Ninja.getDirectionChangeCount()+"\n", "Movement.txt", "");
 			GameObject.FindGameObjectWithTag ("life5").GetComponent<Heart> ().Destroy ();
+			//StartCoroutine (Death ());
 			SceneManager.LoadScene ("GameOver");
 		}
 	}
@@ -112,7 +114,9 @@ public class Kanji : MonoBehaviour
 		Ninja = GameObject.FindGameObjectWithTag ("Ninja").GetComponent<Player>();
 		if(!isGrounded) {
 			if (col.tag == "sword") {
-				GameObject.FindGameObjectWithTag ("score").GetComponent<Score> ().increaseScore ();
+				GameObject.FindGameObjectWithTag ("score").GetComponent<Score> ().increaseScore (isTutorial);
+				AudioSource audio = GetComponent<AudioSource> ();
+				AudioSource.PlayClipAtPoint (audio.clip, trans.position);
 				Instantiate (explosion, trans.position, transform.rotation = Quaternion.identity);
 				isDestroyed = true;
 				GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Spawner> ().Choose();
@@ -120,16 +124,18 @@ public class Kanji : MonoBehaviour
 				incrementPlayCount ();
 				Destroy (gameObject);
 			}
-
 			if (getIsHard()) {
 				if (col.tag == "Ninja") {
+					Instantiate (heart,trans.position, transform.rotation = Quaternion.identity);
+					Ninja.play ();
 					Instantiate (explosion, trans.position, transform.rotation = Quaternion.identity);
 					Destroy (gameObject);
 					takeLife (false);
 				}
 			}
-
 			if (col.name == "ninjaHead") {
+				Instantiate (heart,trans.position, transform.rotation = Quaternion.identity);
+				Ninja.play ();
 				Instantiate (explosion, trans.position, transform.rotation = Quaternion.identity);
 				Destroy (gameObject);
 				takeLife (false);

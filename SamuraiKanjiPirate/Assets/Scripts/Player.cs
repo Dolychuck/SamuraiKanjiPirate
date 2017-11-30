@@ -13,6 +13,9 @@ public class Player : MonoBehaviour {
 	[SerializeField]
 	private float groundRadius;
 
+	public AudioClip landClip;
+	public AudioClip jumpClip;
+
 	[SerializeField]
 	private LayerMask whatIsGround;
 	private bool facingRight;
@@ -54,6 +57,16 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+
+	public void play() {
+		AudioSource audio = GetComponent<AudioSource> ();
+		AudioSource.PlayClipAtPoint (audio.clip, myRigidBody.position);
+	}
+
+	public void play(AudioClip clip) {
+		AudioSource.PlayClipAtPoint (clip, myRigidBody.position);
+	}
+
 	public int getJumpCount() {
 		return jumpCount;
 	}
@@ -87,14 +100,19 @@ public class Player : MonoBehaviour {
 		if (myRigidBody.velocity.y < 0) {
 			myAnimator.SetBool("land",true);
 		}
-		if (!this.myAnimator.GetCurrentAnimatorStateInfo (0).IsTag ("Attack") && isGrounded) {
-			myRigidBody.velocity = new Vector2(horizontal*movementSpeed,myRigidBody.velocity.y);
+		if (!this.myAnimator.GetCurrentAnimatorStateInfo (0).IsTag ("Attack")) {
+			if (isGrounded)
+				myRigidBody.velocity = new Vector2 (horizontal * movementSpeed, myRigidBody.velocity.y);
+			else if(horizontal != 0) {
+				myRigidBody.velocity = new Vector2 (horizontal * (movementSpeed/2), myRigidBody.velocity.y);
+			}
 		}
-
+			
 		if (isGrounded && jump) {
 			isGrounded = false;
 			myRigidBody.AddForce(new Vector2(0,jumpForce));
 			myAnimator.SetTrigger ("jump");
+			//play (jumpClip);
 			jumpCount++;
 		}
 		myAnimator.SetFloat("speed", Mathf.Abs(horizontal));
@@ -174,7 +192,7 @@ public class Player : MonoBehaviour {
 
 	public void Attack() 
 	{
-		Debug.Log(SwordCollider.enabled = !SwordCollider.enabled);
+		SwordCollider.enabled = !SwordCollider.enabled;
 	}
 
 	public void AttackOn() {

@@ -142,6 +142,7 @@ MonoBehaviour:
   isSelected: 0
   trans: {fileID: 0}
   explosion: {fileID: 1076982235598740, guid: 913e294b753168042a93fcf3b2979b9e, type: 2}
+  heart: {fileID: 1855423747331880, guid: a7b995cd3df67af4d9b317803b83987a, type: 2}
   meaning: 
   collider: {fileID: 0}
   edgeCollider: {fileID: 0}
@@ -150,6 +151,7 @@ MonoBehaviour:
   isGrounded: 0
   playCount: 0
   isHard: 0
+  Ninja: {fileID: 0}
 --- !u!212 &212100610902605578
 SpriteRenderer:
   m_ObjectHideFlags: 1

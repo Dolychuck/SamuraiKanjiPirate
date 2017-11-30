@@ -17,6 +17,7 @@ public class Spawner : MonoBehaviour
 	public bool isHard;
 	public static System.Diagnostics.Stopwatch sw;
 	public static int totalKanji;
+	public bool isTutorial;
 
 	void Start ()
 	{
@@ -31,12 +32,12 @@ public class Spawner : MonoBehaviour
 		} else {
 			difficulty = "easy";
 		}
+		/*
 		FileWriter.WriteData ("************New Round ("+difficulty+")**************\n", "KanjiDeath.txt", "");
 		FileWriter.WriteData ("************New Round ("+difficulty+")**************\n", "KanjiKilled.txt", "");
 		FileWriter.WriteData ("************New Round ("+difficulty+")**************\n", "Movement.txt", "");
 		FileWriter.WriteData ("************New Round ("+difficulty+")**************\n", "Round.txt", "");
-		//InvokeRepeating("SpawnChosen", 1f, 5f);
-		//InvokeRepeating("Spawn", spawnDelay1, spawnTime1);
+		*/
 		InvokeRepeating("Spawn", spawnDelay2, spawnTime2);
 	}
 		
@@ -73,6 +74,8 @@ public class Spawner : MonoBehaviour
 	}
 
 	public void Choose() {
+		if (kanjis.Length == 0)
+			return;
 		disableAllinArray ();
 		target = kanjis [Random.Range (0, kanjis.Length)];
 		targetted.Add (target);
@@ -87,6 +90,8 @@ public class Spawner : MonoBehaviour
 
 	void Spawn ()
 	{
+		if (kanjis.Length == 0)
+			return;
 		totalKanji++;
 		if (totalKanji % 3 == 0) {
 			Instantiate (target, new Vector3 (Random.Range (-7, 7), 7, 0), transform.rotation);

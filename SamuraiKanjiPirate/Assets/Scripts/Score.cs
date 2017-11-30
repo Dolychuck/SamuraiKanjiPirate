@@ -15,8 +15,17 @@ public class Score : MonoBehaviour
 		// Setting up the reference.
 	//	playerControl = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>();
 	//}
+	IEnumerator Tutorial() {
+		yield return new WaitForSeconds (2);
+		SceneManager.LoadScene ("HowToPlayEasy");
+	} 
 
-	public void increaseScore() {
+	IEnumerator win() {
+		yield return new WaitForSeconds (2);
+		SceneManager.LoadScene ("Win");
+	} 
+
+	public void increaseScore(bool isTutorial) {
 		score++;
 		if(score == 10) {
 			Player Ninja = GameObject.FindGameObjectWithTag ("Ninja").GetComponent<Player>();
@@ -26,7 +35,11 @@ public class Score : MonoBehaviour
 				+ Ninja.getAttackCount() + "\nJump_attack count: " 
 				+ Ninja.getJumpAttackCount()+"\nDirection change count: " 
 				+ Ninja.getDirectionChangeCount()+"\n", "Movement.txt", "");
-			SceneManager.LoadScene ("Win");
+			if (isTutorial) {
+				StartCoroutine (Tutorial ());
+			} else {
+				StartCoroutine (win ());
+			}
 		}
 	}
 
